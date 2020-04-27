@@ -4,134 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCCCCC"
     android:orientation="vertical"
-    android:background="#000000"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFF00"
-            android:text="Tên: " />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:layout_marginLeft="5dp"
-            android:text="Xong"
-
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_marginTop="-20dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFF00"
-            android:text="Tên: " />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:layout_marginLeft="5dp"
-            android:text="Xong"
-
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="-40dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:text="Tên đăng nhập" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp"
-            android:text="Mật khẩu" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
+        android:background="#CCCCCC"
+        android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-           >
+            android:weightSum="10">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:text="Đăng nhập"
+                android:layout_weight="1"
+                android:text="a="
+                android:textColor="#000000" />
 
-                />
-            <Button
+            <EditText
+                android:id="@+id/edtA"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="9"
                 android:background="#FFFFFF"
-                android:layout_marginLeft="10dp"
-                android:text="Thoát"
+                android:ems="10"
+                android:inputType="number" />
 
-                />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="b="
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/edtB"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="9"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btnX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/btnSlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="/" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Result:"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/edtResult"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="9"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Kết quả"
+                android:inputType="number" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
