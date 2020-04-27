@@ -1,137 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000000"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edtName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/pleaseEnterYourName"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtName">
 
-        <TextView
+        <RadioButton
+            android:id="@+id/rdbMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFF00"
-            android:text="Tên: " />
-        <EditText
+            android:text="@string/male"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rdbFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:layout_marginLeft="5dp"
-            android:text="Xong"
+            android:text="@string/female"
+            android:textSize="20sp" />
+    </RadioGroup>
 
-            />
-    </LinearLayout>
-
-    <LinearLayout
+    <CheckBox
+        android:id="@+id/cb_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="-20dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:text="@string/playSports"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFF00"
-            android:text="Tên: " />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:layout_marginLeft="5dp"
-            android:text="Xong"
-
-            />
-    </LinearLayout>
-
-    <LinearLayout
+    <CheckBox
+        android:id="@+id/cb_2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="-40dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:text="@string/readBook"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:text="Tên đăng nhập" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp"
-            android:text="Mật khẩu" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="50dp"
-            android:paddingVertical="12dp"
-            android:hint="TextInput"
-            android:layout_marginLeft="5dp"
-            android:background="#FFFFFF"
-            />
+    <CheckBox
+        android:id="@+id/cb_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/playVideoGame"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_2" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-           >
+    <CheckBox
+        android:id="@+id/cb_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/goForDrink"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_3" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="5dp"
-                android:text="Đăng nhập"
+    <ImageButton
+        android:id="@+id/imgbFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_4"
+        app:layout_constraintVertical_bias="0.508" />
 
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:layout_marginLeft="10dp"
-                android:text="Thoát"
-
-                />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

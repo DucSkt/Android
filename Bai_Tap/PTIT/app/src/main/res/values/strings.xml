@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="duc_skt">duc_skt</string>
+    <string name="pleaseEnterYourName">Bạn nhập tên đi</string>
+    <string name="male">nam</string>
+    <string name="female">nữ</string>
+    <string name="playSports">Yêu màu tím</string>
+    <string name="readBook">Thích màu hồng</string>
+    <string name="playVideoGame">sống nỗi tâm</string>
+    <string name="goForDrink">Hay khóc thầm</string>
 </resources>
+
+
