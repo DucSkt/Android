@@ -32,16 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Log.d("OnClick", "onClick: " + v.getId());
-        String testA = edtA.getText().toString();
-        String testB = edtB.getText().toString();
-        testA = testA.isEmpty() ? "0" : testA;
-        testB = testB.isEmpty() ? "0" : testB;
-        edtA.setText(testA);
-        edtB.setText(testB);
 
-        int a = Integer.parseInt(testA);
-        int b = Integer.parseInt(testB);
+        int a = Integer.parseInt(edtA.getText().toString());
+        int b = Integer.parseInt(edtB.getText().toString());
 
         switch (v.getId()) {
             case R.id.btnAdd:
@@ -55,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnSlash:
                 if (b == 0) {
-                    Toast.makeText(this, "B cannot equal 0", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "b ko chia duoc 0", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 splash(a,b);
@@ -64,18 +57,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void add(int a, int b) {
-        edtResult.setText("" + (a+b));
+        edtResult.setText((a+b) + "");
     }
 
     private void minus(int a, int b) {
-        edtResult.setText("" + (a-b));
+        edtResult.setText(  (a-b) + "");
     }
 
     private void multi(int a, int b) {
-        edtResult.setText("" + (a*b));
+        edtResult.setText(  (a*b) + "");
     }
 
     private void splash(int a, int b) {
-        edtResult.setText("" + (a*1.0/b));
+        edtResult.setText( (a*1.0/b) + "");
     }
 }
