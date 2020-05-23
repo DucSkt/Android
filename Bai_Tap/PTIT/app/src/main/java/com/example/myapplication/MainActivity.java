@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setEvent() {
+        final DatabaseHandler sqlite = new DatabaseHandler(this);
+
         user.add("Nguyễn Văn A");
         user.add("Nguyễn Văn B");
         user.add("Nguyễn Văn C");
@@ -50,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         //final ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, phieuMuonData);
         final CustomAdapter adapter2 = new CustomAdapter(this, R.layout.item, dv);
         lsvShow.setAdapter(adapter2);
+
+
+        sqlite.getAllStudents(dv);
+        Log.d("22222", String.valueOf(dv));
+        adapter2.notifyDataSetChanged();
 
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 model.setMoney(edtMoney.getText().toString().trim());
                 model.setUser(spUser.getSelectedItem().toString());
                 model.setLoaiDV(spnLoaiDichVu.getSelectedItem().toString());
+                sqlite.addStudent(model);
                 dv.add(model);
+                Log.d("3333333", String.valueOf(dv));
                 adapter2.notifyDataSetChanged();
+
+
             }
         });
 
@@ -81,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(view.getApplicationWindowToken(),0);
                 index = position;
-                edtId.setText(dv.get(position).getId());
-                edtDay.setText(dv.get(position).getDay());
-                edtMoney.setText(dv.get(position).getMoney());
+                edtId.setText(dv.get(position).getId()+"");
+                edtDay.setText(dv.get(position).getDay()+"");
+                edtMoney.setText(dv.get(position).getMoney()+"");
                 spUser.setSelection(user.indexOf(dv.get(position).getUser()));
                 spnLoaiDichVu.setSelection(loaiSach.indexOf(dv.get(position).getLoaiDV()));
             }
@@ -104,8 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 if(index != -1 && dv.isEmpty()) {
                     return;
                 }
+                sqlite.deleteStudent(dv.get(index).getId());
                 dv.remove(index);
                 adapter2.notifyDataSetChanged();
+
             }
         });
 
@@ -122,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 model.setUser(spUser.getSelectedItem().toString());
                 model.setLoaiDV(spnLoaiDichVu.getSelectedItem().toString());
                 adapter2.notifyDataSetChanged();
+                sqlite.updateStudent(model);
             }
         });
 
